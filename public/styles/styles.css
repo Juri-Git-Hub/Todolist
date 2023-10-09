@@ -1,7 +1,7 @@
 nav {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+    display: grid;
+        grid-template-columns: auto auto auto 1fr auto;
+        padding: 10px;
 }
 
 a {
@@ -11,4 +11,11 @@ a {
 
 #heading {
     margin-bottom: 100px;
+}
+#currentday {
+    justify-self: end;
+}
+
+.leftnav {
+    justify-self: start;
 }
