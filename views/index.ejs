@@ -2,26 +2,26 @@
 
 
     <div>
-        <div>
+        <div id="todoInput">
             <form action="/adddaytodo" method="POST">
-                <input type="text" name="todo" placeholder="Enter your todo here">
-                <input type="submit" value="OK">
+                <input type="text" name="todo" placeholder="Enter your todo here" class="inputText">
+                <input type="submit" value="OK" class="inputSubmit">
             </form>
         </div>
-        <div>
+        <div class="gridcontainer">
             <% if (locals.listedTodos) { %>
                 <% listedTodos.forEach(element=> { %>
-                    <input type="checkbox" name="checkbox1" class="todo">
-                    <label for="checkbox1">
-                        <%= element %>
-                    </label>
+                    <div class="task">
+                        <input type="checkbox" name="checkbox1" class="todo checkbox">
+                        <p class="todo">
+                            <%= element %>
+                        </p>
+                        </div>
                 <% }) %>
                     <% } %>
                     
         </div>
     </div>
-
-    <p>Content</p>
 
 
 

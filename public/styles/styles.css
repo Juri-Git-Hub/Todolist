@@ -1,11 +1,30 @@
 nav {
     display: grid;
-        grid-template-columns: auto auto auto 1fr auto;
-        padding: 10px;
+    grid-template-columns: auto auto auto 1fr auto;
+    gap: 10px;
+        margin: 0;
+    }
+    
+    
+    body {
+        background-color: #ADC4CE;
+        font-family: "Roboto", serif;
+    }
+    
+    h1 {
+        margin-right: 30px;
+        margin-left: 15px;
+    }
+    
+    svg {
+        width: 25px;
+        height: 25px;
+        margin-right: 8px;
+        margin-bottom: 0px;
+        vertical-align: middle;
 }
 
 a {
-    text-decoration: none;
     color: black;
 }
 
@@ -14,8 +33,109 @@ a {
 }
 #currentday {
     justify-self: end;
+    margin-right: 15px;
+        background-color: #96B6C5;
+        border-radius: 5px;
+        padding: 15px;
 }
 
 .leftnav {
     justify-self: start;
+    background-color: #96B6C5;
+        border-radius: 5px;
+        padding: 15px;
+    }
+    
+    .checkbox {
+        accent-color: #EEE0C9;
+        margin: 20px;
+        margin-top: 23px;
+        height: 20px;
+        width: 20px;
+    }
+    
+    .task {
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: start;
+        min-height: 70px;
+        max-width: 290px;
+        min-width: 290px;
+        background-color: #EEE0C9;
+    }
+    
+    .todo {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    
+    .gridcontainer {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    #todoInput {
+        display: flex;
+        width: 99vw;
+        justify-content: center;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+    
+    .inputText {
+        border-radius: 5px;
+        height: 50px;
+        font-size: large;
+        color: black;
+        border-color: darkgray;
+        background-color: #F1F0E8;
+    }
+    
+    .inputSubmit {
+        border-radius: 5px;
+        height: 55px;
+        width: 75px;
+        padding-top: 4px;
+        border-color: darkgray;
+        background-color: #F1F0E8;
+    }
+    
+    footer {
+        display: flex;
+        justify-content: center;
+        color: lightgrey;
+    }
+    
+    
+    
+    
+    
+    
+    @media (max-width: 768px) {
+        .gridcontainer {
+            grid-template-columns: auto;
+        }
+    
+        #currentday {
+            display: none;
+        }
+    
+        nav {
+            grid-template-columns: auto 1fr auto auto;
+        }
+    
+        .links {
+            justify-self: end;
+        }
+    }
+    
+    @media screen and (min-width: 769px) and (max-width: 1000px) {
+        .gridcontainer {
+            grid-template-columns: auto auto;
+        }
 }
