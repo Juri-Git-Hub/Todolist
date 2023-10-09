@@ -1,0 +1,14 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#heading {
+    margin-bottom: 100px;
+}

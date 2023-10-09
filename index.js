@@ -15,21 +15,32 @@ mm = month[mm]
 const dayFormatted = day + ", " + mm + ' ' + dd
 
 
+var todos = [];
+var schoolTodos = [];
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+
+
 app.get("/", (req,res) => {
-    res.render("index.ejs", { day: dayFormatted })
+    res.render("index.ejs", { day: dayFormatted, listedTodos: todos })
 })
 
-app.get("/work", (req,res) => {
-    res.render("work.ejs", { day: dayFormatted })
+app.get("/school", (req,res) => {
+    res.render("school.ejs", { day: dayFormatted, listedTodos: schoolTodos })
 })
 
-//app.post("/addtask", (req,res) => {
-//    res.render("index.ejs")
-//})
+app.post("/adddaytodo", (req,res) => {
+    todos.push(req.body["todo"]);
+    res.render("index.ejs", { day: dayFormatted, listedTodos: todos })
+})
+
+app.post("/addschooltodo", (req,res) => {
+    schoolTodos.push(req.body["todo"]);
+    res.render("school.ejs", { day: dayFormatted, listedTodos: schoolTodos })
+})
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`)
